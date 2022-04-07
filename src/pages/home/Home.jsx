@@ -21,6 +21,7 @@ const Home = () => {
     if (query){
       const result = await axios.get(url);
       setFood(result.data.hits);
+      console.log(setFood);
     
     } else{
       console.log("please fill the form");

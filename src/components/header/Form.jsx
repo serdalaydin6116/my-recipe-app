@@ -23,13 +23,16 @@ const Form = ({setQuery, setMeal, getData, mealTypes}) => {
       id ="mealTypes" 
       onChange ={(e)=> setMeal(e.target.value)}>
         {
-          mealTypes.map((item, index)=> <option key={index} value={item.toLowerCase()}>{item}</option>)
+          mealTypes?.map((item, index)=> <option key={index} value={item.toLowerCase()}>{item}</option>)
         }
+        <option>Breakfast</option>
+        <option>Lunch</option>
+        <option>Evening</option>
+        <option>Snack</option>
+        <option>Teatime</option>
 
 
       </Select>
-
-
     </FormContainer>
   )
 }
