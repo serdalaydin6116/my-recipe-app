@@ -1,10 +1,7 @@
+import { Outlet, Navigate } from "react-router-dom";
 
-import React from 'react'
-
-const PrivateRouter = () => {
-  return (
-    <div>PrivateRouter</div>
-  )
+const PrivateRouter = ()=>{
+  const user = JSON.parse(sessionStorage.getItem("user"));
+  return user? <Outlet /> : <Navigate to ="/" />
 }
-
-export default PrivateRouter
+export default PrivateRouter;

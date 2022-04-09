@@ -28,12 +28,8 @@ const Navbar = () => {
         <MenuLink onClick={()=> setIsOpen(!isOpen) } to ="/logout">Logout</MenuLink>
 
       </Menu>
-
-
-
-
     </Nav>
-  )
-}
+  );
+};
 
 export default Navbar

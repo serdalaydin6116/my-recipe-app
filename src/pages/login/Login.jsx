@@ -4,12 +4,16 @@ import { FormContainer, Header, LoginContainer, StyledButton, StyledForm, Styled
 import meal from "../../assets/meal.svg";
 
 const Login = () => {
+
+
+  const user = {username: "user"};
   const handleSubmit = (e) =>{
     e.preventDefault();
-    //  1.method
+    sessionStorage.setItem("user", JSON.stringify(user))
     window.location.href = "/home";
-    //2.method
-    
+   
+
+
 
   }
   return (
