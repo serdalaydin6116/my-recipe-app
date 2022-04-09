@@ -2,6 +2,9 @@
 import axios from 'axios'
 import React, {useState} from 'react'
 import Header from "../../components/header/Header"
+import {ImgDiv, MainContainer, HomeImg} from "./HomeStyles";
+import  homeSvg from "../../assets/home.svg"
+import RecipeCardComp from "./RecipeCardComp"
 
 const APP_ID = "2e834ba2"
 const APP_KEY = "f88c75a4871768c361395adbec04fa05"
@@ -21,7 +24,8 @@ const Home = () => {
     if (query){
       const result = await axios.get(url);
       setFood(result.data.hits);
-      console.log(setFood);
+      console.log(result);
+      console.log(result.data.hits);
     
     } else{
       console.log("please fill the form");
@@ -34,9 +38,19 @@ const Home = () => {
     <div>
       <Header setQuery ={setQuery}
       getData ={getData}
-      meaTypes = {mealTypes}
+      mealTypes = {mealTypes}
       setMeal = {setMeal}
       />
+      {food? (<MainContainer>
+{food.map((liste,index)=>(
+  <RecipeCardComp key={index} recipe1={liste.recipe}/>
+))}
+
+</MainContainer>
+
+):<ImgDiv>
+<HomeImg src={homeSvg}/>
+</ImgDiv>}
 
 
 
