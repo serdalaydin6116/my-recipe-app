@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import { DetailContainer, DetailPart, HeaderContainer, OtherPart } from './DetailsStyles';
+import { DetailContainer, DetailPart, HeaderContainer, ImgContainer, IngredContainer, OtherPart } from './DetailsStyles';
 import dietSvg from "../../assets/diet.svg";
 
 const Details = ({recipe1}) => {
@@ -50,6 +50,31 @@ const Details = ({recipe1}) => {
           ))}
 
         </OtherPart>
+        <ImgContainer>
+          <img  src ={recipe.image} alt={recipe.label}/>
+        </ImgContainer>
+        <IngredContainer>
+          {recipe.ingredientLines.map((malzeme, index)=>(
+            <div key = {index}> 
+              <p> {index+1} * {malzeme}</p>
+
+            </div>
+           
+          ))}
+
+{/* //ul-- ve --li şeklinde çözüm */}
+        {/* <h2>Ingredients</h2>
+        <ul>
+          {recipe.ingredientLines.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul> */}
+
+
+        </IngredContainer>
+
+
+
       </DetailPart>
 
 
